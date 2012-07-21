@@ -7,12 +7,10 @@ class HomeController extends CI_Controller {
 		$data = array();
 
 		// Meta Info
-		echo link_tag('css/bootstrap.min.css');
-		echo link_tag('css/home.css');
-		echo link_tag('css/bootstrap-responsive.min.css');
-		echo link_tag('less/layouts.less');
-		$this->load->library('javascript');
-		$this->load->library('javascript/jquery');
+		echo link_tag('web/css/bootstrap.min.css');
+		echo link_tag('web/css/home.css');
+		echo link_tag('web/css/bootstrap-responsive.min.css');
+		echo link_tag('web/less/layouts.less');
 		$data['title'] = 'Outtimed';
 
 

@@ -23,7 +23,7 @@
 | RESERVED ROUTES
 | -------------------------------------------------------------------------
 |
-| There area two reserved routes:
+| There are two reserved routes:
 |
 |	$route['default_controller'] = 'welcome';
 |
@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = 'HomeController';
+$route['Smarty'] = 'Smartytest';
 $route['404_override'] = '';
 
 
