@@ -39,8 +39,8 @@
 */
 
 $route['default_controller'] = 'HomeController';
-$route['Smarty'] = 'Smartytest';
-$route['404_override'] = '';
+$route['Smarty'] 			 = 'Smartytest';
+$route['404_override'] 		 = '';
 
 
 /* End of file routes.php */

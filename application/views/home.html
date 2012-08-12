@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title><?php echo $title;?></title>
+	<title>{$title}</title>
 </head>
 
 <body>
@@ -16,12 +16,14 @@
 
 
 
-<script type="text/javascript" src="web/js/jquery.js"></script>
-<script type="text/javascript" src="web/js/autocomp.js"></script>
 <script type="text/javascript">
 
 	$( function() {
-		$("#nice").autocomp();
+		$("#nice").typeahead({
+			source : function() {
+				return ["ozan", "abi", "naber"]
+			}
+		});
 
 	})
 

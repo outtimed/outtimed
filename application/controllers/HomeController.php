@@ -2,19 +2,39 @@
 
 class HomeController extends CI_Controller {
 
+	public function HomeController() {
+		parent::__construct();
+		$this->load->library('template');
+		$this->load->library('raintpl');
+	}
+
 	public function index() {
-		$this->load->helper('html');
-		$data = array();
 
-		// Meta Info
-		echo link_tag('web/css/bootstrap.min.css');
-		echo link_tag('web/css/home.css');
-		echo link_tag('web/css/bootstrap-responsive.min.css');
-		echo link_tag('web/less/layouts.less');
-		$data['title'] = 'Outtimed';
+		$this->template->add_css('web/css/autocomp.css');
+		$this->template->add_css('web/css/bootstrap.min.css');
+		$this->template->add_css('web/css/home.css');
+		$this->template->add_css('web/css/bootstrap.responsive.min.css');
+		$this->template->add_js('web/js/jquery.js');
+		$this->template->add_js('web/js/bootstrap-typeahead.js');
+		$this->template->add_js('web/js/autocomp.js');
+/*
 
+      // Write to $title
+      $this->template->write('title', 'Welcome to the Template Library Docs!');
+      
+      // Write to $content
+      $this->template->write_view('content', 'home');
+      
+      // Write to $sidebar
+      $this->template->write('sidebar', 'Whatzup');
+      
+      // Render the template
+      $this->template->render();
 
+*/
+      $this->raintpl->assign('title', 'Hi');
+      $this->template->parse_view('content', 'home');
+      $this->template->render();
 
-		$this->load->view('home', $data);
 	}
 }

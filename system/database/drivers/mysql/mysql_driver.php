@@ -642,7 +642,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	function _update_batch($table, $values, $index, $where = NULL)
 	{
 		$ids = array();
-		$where = ($where != '' AND count($where) >=1) ? implode(" ", $where).' AND ' : '';
+		$where = ($where != '' AND count($where) >=1) ? implode(' ', $where).' AND ' : '';
 
 		foreach ($values as $key => $val)
 		{
@@ -657,7 +657,7 @@ class CI_DB_mysql_driver extends CI_DB {
 			}
 		}
 
-		$sql = "UPDATE ".$table." SET ";
+		$sql = 'UPDATE '.$table.' SET ';
 		$cases = '';
 
 		foreach ($final as $k => $v)
@@ -721,14 +721,14 @@ class CI_DB_mysql_driver extends CI_DB {
 
 			if (count($where) > 0 && count($like) > 0)
 			{
-				$conditions .= " AND ";
+				$conditions .= ' AND ';
 			}
 			$conditions .= implode("\n", $like);
 		}
 
 		$limit = ( ! $limit) ? '' : ' LIMIT '.$limit;
 
-		return "DELETE FROM ".$table.$conditions.$limit;
+		return 'DELETE FROM '.$table.$conditions.$limit;
 	}
 
 	// --------------------------------------------------------------------

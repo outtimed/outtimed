@@ -82,6 +82,9 @@
         , q
 
       this.query = this.$element.val()
+      if( typeof this.options.source == "function") {
+          this.source = this.options.source(this.query)
+      }
 
       if (!this.query) {
         return this.shown ? this.hide() : this
