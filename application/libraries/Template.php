@@ -671,6 +671,21 @@ class CI_Template {
       
       return $output;
    }
+
+
+   // --------------------------------------------------------------------
+   
+   /**
+   * Build a region from it's contents. Apply wrapper if provided
+   *
+   * @access  public
+   * @param string  region to build
+   * @return void
+   */
+
+   function title($title) {
+      $this->write('title', $title);
+   }
    
 }
 // END Template Class
